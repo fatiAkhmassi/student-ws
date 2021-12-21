@@ -1,0 +1,22 @@
+server:
+  port: 8073
+spring:  application:    name: getway-service
+  cloud:
+    discovery:
+      enabled: true
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+            - GET
+            - POST
+eureka:  client:    register-with-eureka: true    service-url:
+      defaultZone: http://localhost:8072/eureka
+
+
+jwt:
+  secret: sdfsdfsdfjsdlfsdfkjsdflsdf
+  token:
+    validity: 120000
